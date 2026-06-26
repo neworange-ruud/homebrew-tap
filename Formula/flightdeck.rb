@@ -1,15 +1,15 @@
 class Flightdeck < Formula
   desc "A macOS-first terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
   homepage "https://github.com/neworange-ruud/flightdeck"
-  version "1.0.4"
+  version "1.0.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.0.4/flightdeck-aarch64-apple-darwin.tar.xz"
-      sha256 "3902b49ae0fa25d33002ce4bd2f48cd0e447cbc96d0d54a83fedeba91f94f658"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.0.5/flightdeck-aarch64-apple-darwin.tar.xz"
+      sha256 "c2a636e91cae83e26b2bf692b5648d2980a02763c1ebe34ca3d882577cf2d9b7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.0.4/flightdeck-x86_64-apple-darwin.tar.xz"
-      sha256 "ddd92b91c614fa58a18ebf15f23cbebb940f890a4bff4aa95f9bf9000c25d14d"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.0.5/flightdeck-x86_64-apple-darwin.tar.xz"
+      sha256 "2524d496c4511e26fcad9a1b0916fac2cbb22a9d1ca1285c0825672e99813573"
     end
   end
   license "MIT"
