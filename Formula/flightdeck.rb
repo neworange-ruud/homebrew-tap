@@ -1,22 +1,23 @@
 class Flightdeck < Formula
   desc "A macOS-first terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
   homepage "https://github.com/neworange-ruud/flightdeck"
-  version "1.1.0"
+  version "1.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.1.0/flightdeck-aarch64-apple-darwin.tar.xz"
-      sha256 "b3d9b3599b17927e7aaf1388ef83b59517acd70e898828912f080f3d424353aa"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.2.0/flightdeck-aarch64-apple-darwin.tar.xz"
+      sha256 "b0bcc94b1facb5dba9cea44f167e79e0765c0bc27c8ffd3f0b07698100b96bab"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.1.0/flightdeck-x86_64-apple-darwin.tar.xz"
-      sha256 "db60c0b675a244c01ca69b73e65790199851296e2a71d1e52b7831017f7cef26"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.2.0/flightdeck-x86_64-apple-darwin.tar.xz"
+      sha256 "e7c9027c3e09c5bd95d7c50518b553245b66fcfa4736839642ab505b550f012d"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin":  {},
+    "aarch64-apple-darwin":  {},
+    "x86_64-apple-darwin":   {},
+    "x86_64-pc-windows-gnu": {},
   }.freeze
 
   def target_triple
