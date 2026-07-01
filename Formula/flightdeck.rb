@@ -1,23 +1,28 @@
 class Flightdeck < Formula
-  desc "A macOS-first terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
+  desc "A cross-platform terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
   homepage "https://github.com/neworange-ruud/flightdeck"
-  version "1.2.0"
+  version "1.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.2.0/flightdeck-aarch64-apple-darwin.tar.xz"
-      sha256 "b0bcc94b1facb5dba9cea44f167e79e0765c0bc27c8ffd3f0b07698100b96bab"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.3.0/flightdeck-aarch64-apple-darwin.tar.xz"
+      sha256 "558b2f7d63dd3bacb5b68858fe694eb619a1990d8fea0bc1b9801d124e8ee13a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.2.0/flightdeck-x86_64-apple-darwin.tar.xz"
-      sha256 "e7c9027c3e09c5bd95d7c50518b553245b66fcfa4736839642ab505b550f012d"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.3.0/flightdeck-x86_64-apple-darwin.tar.xz"
+      sha256 "267237925f4254db019dcec5363ad6a595cc56ada48b6e61b1b72289d1412211"
     end
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.3.0/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "7e4d3e4d703b4e0e17c9f7c8f5cbf1ee1d3c200637e4cd8d1b824e2fc4af77bb"
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":  {},
-    "x86_64-apple-darwin":   {},
-    "x86_64-pc-windows-gnu": {},
+    "aarch64-apple-darwin":     {},
+    "x86_64-apple-darwin":      {},
+    "x86_64-pc-windows-gnu":    {},
+    "x86_64-unknown-linux-gnu": {},
   }.freeze
 
   def target_triple
@@ -38,6 +43,7 @@ class Flightdeck < Formula
   def install
     bin.install "flightdeck" if OS.mac? && Hardware::CPU.arm?
     bin.install "flightdeck" if OS.mac? && Hardware::CPU.intel?
+    bin.install "flightdeck" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
