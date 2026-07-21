@@ -1,20 +1,20 @@
 class Flightdeck < Formula
   desc "A cross-platform terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
   homepage "https://github.com/neworange-ruud/flightdeck"
-  version "1.9.0"
+  version "1.10.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.9.0/flightdeck-aarch64-apple-darwin.tar.xz"
-      sha256 "d696266842b2e4f6d1070aabb240b99c8b492f955df8b603e47197ea301fbe9b"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.10.0/flightdeck-aarch64-apple-darwin.tar.xz"
+      sha256 "75eb558805c6081bbee89f36f86bfe36ce5abc889e6249e5cc8fbe0ab74d998f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.9.0/flightdeck-x86_64-apple-darwin.tar.xz"
-      sha256 "48827f61a866aef4f06dffc9e86e4c56ff32ce0a123bb047e585ac3f58e928cc"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.10.0/flightdeck-x86_64-apple-darwin.tar.xz"
+      sha256 "9ee12679896a6d76b9a0a6d5eefed661d1d6ed50174fb02fbed1a007dc14a2be"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.9.0/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "b5766b3b49bf084a1e5fddac2416568b3df0c0ee9979ce1ee20d226426b2744b"
+    url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.10.0/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "dd7052255bc93095d7e3af98f700bb2becfb203f088527747201dd5ba266f3b6"
   end
   license "MIT"
 
