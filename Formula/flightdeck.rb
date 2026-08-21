@@ -1,20 +1,20 @@
 class Flightdeck < Formula
   desc "A cross-platform terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
   homepage "https://github.com/neworange-ruud/flightdeck"
-  version "1.14.0"
+  version "1.15.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.14.0/flightdeck-aarch64-apple-darwin.tar.xz"
-      sha256 "754a6acf1c1c4ec5c5ef28dfed187bcf356e93bc1676d031206f0a65f3706000"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.15.0/flightdeck-aarch64-apple-darwin.tar.xz"
+      sha256 "f25bb92184c22ec46ec801e2c37dd679e223632023a4ab06d811f27d18a31083"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.14.0/flightdeck-x86_64-apple-darwin.tar.xz"
-      sha256 "b5e3e4afcb3966bc4458bf511cfdaf1dfed1c78f75cabb1b83f8626c33eeda94"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.15.0/flightdeck-x86_64-apple-darwin.tar.xz"
+      sha256 "9580c0a8160fee6c4f39cafe6200b9d0414e78a54eab50e2a4f9d522252ebc60"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.14.0/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "6aebba4fbc5b979ec49a9a390942f0c285230ba8d27cedb3b272892fe095ae04"
+    url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.15.0/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "f81d48a5443bf2e4f6b492701ce79f31f5355df1676d99788de8473432c2f071"
   end
   license "MIT"
 
@@ -41,9 +41,15 @@ class Flightdeck < Formula
   end
 
   def install
-    bin.install "flightdeck" if OS.mac? && Hardware::CPU.arm?
-    bin.install "flightdeck" if OS.mac? && Hardware::CPU.intel?
-    bin.install "flightdeck" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "flightdeck"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "flightdeck"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "flightdeck"
+    end
 
     install_binary_aliases!
 
