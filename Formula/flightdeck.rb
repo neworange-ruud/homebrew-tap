@@ -1,25 +1,25 @@
 class Flightdeck < Formula
   desc "A cross-platform terminal UI for orchestrating multiple local AI coding agents in isolated Git worktrees."
   homepage "https://github.com/neworange-ruud/flightdeck"
-  version "1.35.0"
+  version "1.35.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.0/flightdeck-aarch64-apple-darwin.tar.xz"
-      sha256 "979a53dee7fac74c2df59ca7763479a5697cc5ed19d2c5b850ef0753447aa8a5"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.1/flightdeck-aarch64-apple-darwin.tar.xz"
+      sha256 "3ee79a82d54ff76ec3efb72d18a3f51a2269aa5e83cd31b3bde82f9689413c2e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.0/flightdeck-x86_64-apple-darwin.tar.xz"
-      sha256 "afe434d46749c8d6604ad833f7e8c16c780a7e93b8cb9b5cf9adc932de74b7e5"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.1/flightdeck-x86_64-apple-darwin.tar.xz"
+      sha256 "a5058ae898678fd7dab72011a34f9729104757277bae93e27848cf3d3e4cd311"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.0/flightdeck-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1feee0eef27357d2018c19cb1b4725f8a352b05dd7827577920f5584383612b3"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.1/flightdeck-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "576e2e647389a6aaff83cd8d2bd292e88ad80212c55c541de3647234b1a9c398"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.0/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b7008bead585c9fc580569cae8ca32d073630d6b640a8a083ece18f2c1bbbbd7"
+      url "https://github.com/neworange-ruud/flightdeck/releases/download/v1.35.1/flightdeck-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "31ec2dba2cd3a68b3043d5f9972a56be94361381276abf66490ee384cca2f4f3"
     end
   end
   license "MIT"
